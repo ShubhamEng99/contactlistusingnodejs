@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>first ejs file</h1>
+    <ul>
+        <% for(let i of list) {%>
+            <li><%= i.name %> <%= i.phone %> <button><a href="/del-contact/?id=<%= i._id %>">del</a></button></li>
+            <%}%>
+    </ul>
+    <form action='/create-contact' method='POST'>
+    <input type="text" placeholder="Enter name" name="name" required>
+    <input type="number"placeholder="Enter contact" name="phone" required>
+    <button type="submit">Add</button>
+    </form>
+</body>
+</html>
